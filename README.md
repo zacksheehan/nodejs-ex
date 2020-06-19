@@ -19,9 +19,6 @@ The [prom-client](https://www.npmjs.com/package/prom-client) module will collect
 
 - Metrics endpoint: http://localhost:3000/metrics
 
-# Developer Workspace
-[![Contribute](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](http://beta.codenvy.com/f?id=r8et9w6vohmqvro8)
-
 ## License
 
 This stack is licensed under the [EPL 2.0](./LICENSE) license.
