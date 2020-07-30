@@ -1,7 +1,7 @@
 metadata:
   name: Node-Example
 projects:
-  - name: nodejs-web-app
+  - name: nodejs-ex
     source:
       location: 'https://github.com/odrodrig/nodejs-ex.git'
       type: git
@@ -21,19 +21,13 @@ apiVersion: 1.0.0
 commands:
   - name: devBuild
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-web-app/'
+      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-ex/'
         type: exec
         command: npm install
         component: runtime
   - name: devRun
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-web-app/'
+      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-ex/'
         type: exec
         command: nodemon app.js
         component: runtime
-  - name: devTest
-    actions:
-    - workdir: '${CHE_PROJECTS_ROOT}/nodejs-web-app/'
-      type: exec
-      command: npm test
-      component: runtime
