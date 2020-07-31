@@ -1,4 +1,3 @@
-apiVersion: 1.0.0
 metadata:
   name: Node-Example
 components:
@@ -10,3 +9,25 @@ components:
     type: dockerimage
     alias: runtime
     image: 'quay.io/eclipse/che-nodejs10-ubi:nightly'
+  - id: che-incubator/typescript/latest
+    type: chePlugin
+apiVersion: 1.0.0
+projects:
+  - name: nodejs-ex
+    source:
+      location: 'https://github.com/zacksheehan/nodejs-ex'
+      type: git
+      branch: master
+commands:
+  - name: devBuild
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-ex/'
+        type: exec
+        command: npm install
+        component: runtime
+  - name: devRun
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/nodejs-ex/'
+        type: exec
+        command: nodemon app.js
+        component: runtime
